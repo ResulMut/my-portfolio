@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Portofolio</title>
-<link rel="icon" type="image/png" href="img/me2.png" >
+<link rel="icon" type="image/png" href="img/me3.webp" >
 <link rel="stylesheet" href="style.css">
     </head>
 
@@ -59,7 +59,7 @@
 <div class="skill-item">
     <span class="skill-name">HTML & CSS</span>
     <div class="progress-bar">
-    <div class="progress css" style="width: 80%;"></div>
+    <div class="progress css" style="width: 90%;"></div>
     </div>
 </div>
 <div class="skill-item">
@@ -72,7 +72,12 @@
     <span class="skill-name">C#</span>
     <div class="progress-bar">
     <div class="progress css" style="width: 40%;"></div>
-    </div>
+</div>
+<div class="skill-item">
+    <span class="skill-name">javaScript</span>
+    <div class="progress-bar">
+    <div class="progress css" style="width: 50%;"></div>
+</div>
 </div>
         </div>
     </div>
@@ -85,19 +90,16 @@
                         <!-- <img src="img/1vıdeoDvn.png" alt="YT Downloader"> -->
                         <h3 class="project-h3">YT Video Downloader</h3>
                         <p>Streamlit ile geliştirilmiş, çoklu indirme optimizasyonlu araç.</p>
-                        <p><a href="https://github.com/ResulMut" target="_blank" class="project-a">Github<i class="fa-brands fa-github" class="project-ico"></i></a></p>
                     </div>
                     <div class="project-card">
                         <!-- <img src="img/1IoT.jpeg" alt="Smart Sera"> -->
                         <h3 class="project-h3">Akıllı Sera Sistemi</h3>
                         <p>ESP32 ve web kontrol paneli ile otomatik bitki bakımı.</p>
-                        <p><a href="#hero" class="project-a">detaylar<i class="fa-solid fa-arrow-right" class="project-ico"></i> </a></p>
                     </div>
                     <div class="project-card">
                         <!-- <img src="img/1website.png" alt="Web Developer"> -->
                         <h3 class="project-h3">Profesyonel Portfolyo</h3>
                         <p>Karanlık mod, animasyonlar ve modern tasarım ile kodladığım site.</p>
-                        <p><a href="#hero" class="project-a">Demo<i class="fa-solid fa-eye" class="project-ico"></i></a></p>
                     </div>
                 </div>
             </section>
@@ -147,12 +149,13 @@
                     <p>📞 0507 052 3180</p>
                     <p></i>📍 İstanbul, Türkiye</p>
                 </div>
-                    <form>
-                        <input type="text" placeholder="Ad Soyad">
-                        <input type="email" placeholder="E-posta">
-                        <textarea placeholder="mesajınız"></textarea>
-                        <button type="submit"><a href="#hero"> Mesaj Gönder</button>
+                    <form id="iletisimFormu" action="https://formspree.io/f/mgoppozv" method="POST">
+                        <input type="text" name="ad"  placeholder="Ad Soyad" required>
+                        <input type="email" name="email" placeholder="E-posta" required>
+                        <textarea name="mesaj" placeholder="mesajınız" required></textarea>
+                        <button type="submit">Mesaj Gönder</button>
                         </form>
+                        <p id="formDurumu"></p>
                 </div>
             </section>
 
@@ -163,6 +166,8 @@
                 <a href="https://www.linkedin.com/in/resul-mut" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </footer>
-            
+
+
+            <script src="main.js"></script>
     </body>
 </html>
