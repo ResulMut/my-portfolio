@@ -379,7 +379,9 @@ footer p{
     font-weight: bold;
     margin-left: 18px;
 }
-
+#js-kutu {
+    margin-top: 15px; /* İstediğin kadar artırıp azaltabilirsin */
+}
 
 
 
