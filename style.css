@@ -34,6 +34,21 @@ header a{
     text-decoration: none;
     margin-left: 9px;
 }
+header button{
+    background-color: transparent;
+    border: none;
+    color: #808080;
+    font-size: 20px;
+    align-items: right;
+}
+header button:hover{
+    color: rgb(255, 255, 255);
+
+}
+.dark-theme {
+    background-color: #f5f6fa !important;
+    color: #2f3640 !important;
+}
 .hover:hover {
     cursor: pointer;
     transform: translateY(-3px);
@@ -83,10 +98,11 @@ header a{
     width: 140px;
     height: 54px;
     transition: all 0.2s linear;
+    --yazi-rengi-notu: #e0e0e0;
 
 }
 .btn-cv-text{
-    color: #e0e0e0;
+    color: var(--yazi-rengi-notu);
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -117,17 +133,18 @@ header a{
     transition-duration: 0.2s;
     background-color: rgb(15, 98, 207);
 }
-.btn-cv:hover{
+.btn-cv:hover {
     transform: translateY(-2px);
     transition-duration: 0.2s;
     background-color: #e0e0e0;
+    --yazi-rengi-notu: #383838;
 }
 .icon-css:hover{
     transform: translateY(-2px);
     transition-duration: 0.2s;
     color: rgb(50, 131, 238);
 }
-.btn-cv-text:hover{
+.btn-cv-text:hover {
     color: #383838;
 }
 #about{
@@ -380,15 +397,12 @@ footer p{
     margin-left: 18px;
 }
 #js-kutu {
-    margin-top: 15px; /* İstediğin kadar artırıp azaltabilirsin */
+    margin-top: 15px;
 }
 
 
 
-/* --- TELEFON DÜZENLEMELERİ --- */
 @media (max-width: 768px) {
-    
-    /* 1. Header (Menü): Linkleri biraz küçültelim ki sığsın */
     header ul {
         gap: 10px;
         padding: 0;
@@ -396,22 +410,20 @@ footer p{
     header li {
         font-size: 14px;
     }
-
-    /* 2. Hero (Giriş): O büyük boşlukları sıfırlayalım */
     #hero {
-        margin-top: 100px; /* Bilgisayarda 240px'di, mobilde azalttık */
+        margin-top: 100px;
         text-align: center;
     }
     .p1, .h1, .h2, .p2 {
-        margin-left: 0 !important; /* Sol boşlukları iptal ettik */
+        margin-left: 0 !important;
         margin-right: 0 !important;
         width: 100%;
         text-align: center;
     }
-    .h1 { font-size: 48px; } /* Yazı boyutu küçüldü */
+    .h1 { font-size: 48px; }
     .h2 { font-size: 28px; }
     .hero-button {
-        flex-direction: column; /* Butonlar alt alta gelsin */
+        flex-direction: column;
         align-items: center;
         gap: 15px;
     }
@@ -420,8 +432,6 @@ footer p{
         justify-content: center;
         margin-left: 0;
     }
-
-    /* 3. Hakkımda (About): Yan yana olanları alt alta getir */
     .about-grid {
         flex-direction: column;
         padding: 20px;
@@ -430,7 +440,6 @@ footer p{
         max-width: 100%;
     }
 
-    /* 4. Projeler: Kartlar alt alta gelsin */
     .projects-container {
         flex-direction: column;
         padding: 20px;
@@ -439,19 +448,17 @@ footer p{
         width: 90%;
     }
 
-    /* 5. Hizmetler: 3 sütunu 1 sütuna düşür */
     .services-container {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
 
-    /* 6. İletişim (Contact): Başlığı ve formu ortala */
     #contact h2 {
-        margin-left: 0; /* 320px olan boşluğu sildik */
+        margin-left: 0; 
         text-align: center;
     }
     .contact-container {
-        flex-direction: column; /* Bilgiler ve form alt alta */
+        flex-direction: column; 
         align-items: center;
         gap: 40px;
         padding: 0 20px;
@@ -464,10 +471,9 @@ footer p{
         align-items: center;
     }
     form input, form textarea, form button {
-        max-width: 100%; /* Ekran genişliğine yayılsın */
+        max-width: 100%; 
     }
 
-    /* 7. Footer: İkonları ve yazıyı ortala */
     footer {
         flex-direction: column;
         height: auto;
@@ -477,4 +483,63 @@ footer p{
         margin-left: 0;
         margin-top: 10px;
     }
+}
+
+body.aydinlik-mod {
+    background-color: #f5f6fa !important;
+    color: #2f3640 !important;
+}
+.aydinlik-mod .h1,
+.aydinlik-mod .h2,
+.aydinlik-mod .p1,
+.aydinlik-mod .p2,
+.aydinlik-mod .project-head,
+.aydinlik-mod .project-h3,
+.aydinlik-mod .services-head,
+.aydinlik-mod #services h4,
+.aydinlik-mod #services p,
+.aydinlik-mod .skill-name,
+.aydinlik-mod .aboutme h3,
+.aydinlik-mod .skills h3,
+.aydinlik-mod #contact h2,
+.aydinlik-mod footer p,
+.aydinlik-mod header a,
+.aydinlik-mod header li,
+.aydinlik-mod .btn-cv-text,
+.aydinlik-mod .project-a {
+    color: #2f3640 !important;
+    -webkit-text-fill-color: #2f3640 !important; 
+    background: none !important;
+}
+.aydinlik-mod .project-card,
+.aydinlik-mod #contact form input,
+.aydinlik-mod #contact form textarea {
+    background-color: #ffffff !important;
+    color: #2f3640 !important;
+    border: 2px solid #dcdde1 !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+.aydinlik-mod header {
+background-color: transparent !important;
+    
+    background-color: rgba(255, 255, 255, 0.2) !important; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+.aydinlik-mod .icon-css {
+    color: #2f3640 !important;
+}
+.aydinlik-mod header a:hover,
+.aydinlik-mod header button:hover,
+.aydinlik-mod .icon-css:hover,
+.aydinlik-mod .project-a:hover {
+    color: rgb(50, 131, 238) !important; 
+    -webkit-text-fill-color: rgb(50, 131, 238) !important;
+}
+.aydinlik-mod .btn-cv:hover {
+    background-color: #2f3640 !important;
+    border-color: #2f3640 !important;
+}
+.aydinlik-mod .btn-cv:hover .btn-cv-text {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }

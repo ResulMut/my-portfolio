@@ -2,38 +2,36 @@ let iletisimFormu = document.getElementById("iletisimFormu");
 let formDurumu = document.getElementById("formDurumu");
 
 iletisimFormu.addEventListener("submit", function(event) {
-    
-    // 1. NİNJA HAMLESİ: Sayfanın Formspree'ye gitmesini DURDUR! 🛑
     event.preventDefault();
-    
-    // 2. Formun içindeki verileri (isim, mail, mesaj) bir paket haline getir.
     let veriPaketi = new FormData(iletisimFormu);
-
-    // Kullanıcıya gönderiliyor hissi verelim
     formDurumu.textContent = "Mesaj gönderiliyor... ⏳";
-    formDurumu.style.color = "white"; // Sitenin rengine göre uyarla
-
-    // 3. Arka kapıdan (Fetch API) gizlice Formspree'ye gönder! 🚀
+    formDurumu.style.color = "white";
     fetch(iletisimFormu.action, {
         method: iletisimFormu.method,
         body: veriPaketi,
         headers: {
-            'Accept': 'application/json' // Formspree'ye "Bana site açma, sadece JSON (tamam) mesajı yolla" diyoruz.
+            'Accept': 'application/json'
         }
     }).then(response => {
         if (response.ok) {
-            // EĞER BAŞARILIYSA:
             formDurumu.textContent = "Harika! Mesajınız bana ulaştı.";
             formDurumu.style.color = "#e0e0e0";
-            iletisimFormu.reset(); // İçerideki yazıları temizle (Sıfırla)
+            iletisimFormu.reset();
         } else {
-            // EĞER FORMSPREE HATA VERİRSE:
-            formDurumu.textContent = "Eyvah, bir sorun oluştu. Lütfen tekrar deneyin. 😢";
+            formDurumu.textContent = "Eyvah, bir sorun oluştu. sLütfen tekrar deneyin. 😢";
             formDurumu.style.color = "red";
         }
     }).catch(error => {
-        // EĞER İNTERNET KOPARSA:
         formDurumu.textContent = "Bağlantı hatası! İnternetinizi kontrol edin. 📡";
         formDurumu.style.color = "red";
     });
+});
+let darkThemeBtn = document.getElementById("darkThemeBtn");
+darkThemeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("aydinlik-mod");
+    if (document.body.classList.contains("aydinlik-mod")) {
+        darkThemeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    } else {
+        darkThemeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
 });
