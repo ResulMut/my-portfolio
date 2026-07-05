@@ -156,64 +156,78 @@ header button:hover{
     font-size: 54px;
     font-weight: bold;
 }
-.about-grid{
+.about-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap:20px;
-    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
-.aboutme{
-flex: 2;
+.aboutme {
+    width: 100%;
 }
-.aboutme h3{
+.aboutme h3 {
     color: rgb(15, 98, 207);
     font-size: 26px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
-.skills h3{
+.aboutme p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+.skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skills h3 {
     color: rgb(15, 98, 207);
-    font-size:  26px;
+    font-size: 26px;
     font-weight: bold;
-}
-.skills{
-    flex: 1;
-    text-align: left;
+    margin-bottom: 15px;
 }
 
 .skills-container {
     width: 100%;
-    max-width: 300px; 
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .skill-item {
-    margin-bottom: 15px; 
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgb(50, 131, 238);
+    border-radius: 20px;
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    background-color: rgb(50, 131, 238);
+    transform: translateY(-3px);
 }
 
 .skill-name {
-    color: white;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-
-.progress-bar {
-    background-color: #333; 
-    width: 100%;
-    height: 10px;
-    border-radius: 10px;
-    overflow: hidden; 
+.skill-item:hover .skill-name {
+    color: #ffffff;
 }
-
-.progress {
-    height: 100%;
-    border-radius: 10px;
-    transition: width 1s ease-in-out; 
-}
-
-.python { background-color: #264de4; } 
-.css { background-color: #264de4; }    
 
 #projects{
     margin: 180px 0 44px 0;
@@ -300,33 +314,62 @@ flex: 2;
     cursor: pointer;
     color: rgb(50, 131, 238);
 }
-#contact h2{
-    text-align: left;
-    margin: 12px 0 54px 320px;
+#contact h2 {
+    text-align: center;
+    margin: 12px auto 54px auto;
     font-weight: bold;
     color: #808080;
     font-size: 54px;
 }
-#contact{
+#contact {
     margin-bottom: 120px;
     padding: 50px 0;
 }
-.contact-container{
+.contact-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 100px;
-    max-width: 1200px;
+    align-items: center;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.location{
+.location {
     flex: 1;
-    max-width: 300px;
-}
-#contact form{
-    flex: 2;
     display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 20px;
+    max-width: 350px;
+}
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    border-color: rgb(50, 131, 238);
+    background-color: rgba(50, 131, 238, 0.1);
+}
+.contact-info-item i {
+    font-size: 24px;
+    color: rgb(50, 131, 238);
+}
+.contact-info-item p {
+    color: #e0e0e0;
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+}
+#contact form {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 form input{
     width: 100%;
@@ -396,9 +439,7 @@ footer p{
     font-weight: bold;
     margin-left: 18px;
 }
-#js-kutu {
-    margin-top: 15px;
-}
+/* removed js-kutu margin */
 
 
 
@@ -577,4 +618,31 @@ background-color: transparent !important;
 .aydinlik-mod .btn-cv:hover .btn-cv-text {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+}
+
+.aydinlik-mod .skill-item {
+    background-color: #ffffff !important;
+    border: 1px solid rgb(50, 131, 238) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.aydinlik-mod .skill-item:hover {
+    background-color: rgb(50, 131, 238) !important;
+    transform: translateY(-3px);
+}
+.aydinlik-mod .skill-item:hover .skill-name {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.aydinlik-mod .contact-info-item {
+    background-color: #ffffff !important;
+    border: 1px solid #dcdde1 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.aydinlik-mod .contact-info-item:hover {
+    border-color: rgb(50, 131, 238) !important;
+    background-color: rgba(50, 131, 238, 0.05) !important;
+}
+.aydinlik-mod .contact-info-item p {
+    color: #2f3640 !important;
 }
