@@ -2,144 +2,474 @@
 <html lang="tr">
 
 <head>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portofolio</title>
-    <link rel="icon" type="image/png" href="img/me3.webp">
+    <title>Resul Mut | Web Developer & Python Geliştirici</title>
+    <meta name="description" content="Resul Mut — Web Developer, Python ve IoT teknolojileri meraklısı. Erzincan Binali Yıldırım Üniversitesi Bilgisayar Programcılığı öğrencisi.">
+    <meta name="keywords" content="Resul Mut, Web Developer, Python, IoT, React, JavaScript, Portfolio, ESP32">
+    <meta name="author" content="Resul Mut">
+    <meta property="og:title" content="Resul Mut | Portfolio">
+    <meta property="og:description" content="Web Developer, Python ve IoT teknolojileri meraklısı">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Devicon (skill icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- AOS — Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <link rel="icon" type="image/webp" href="img/me3.webp">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <nav class="position">
-            <ul>
-                <li class="hover"><a href="#hero" class="hover">Ana Sayfa</a></li>
-                <li class="hover"><a href="#about" class="hover">Hakkımda</a></li>
-                <li class="hover"><a href="#projects" class="hover">Projeler</a></li>
-                <li class="hover"><a href="#contact" class="hover">İletişim</a></li>
-                <button class="dark-theme-btn" id="darkThemeBtn"><i class="fas fa-moon"></i></button>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <header id="navbar">
+        <nav class="nav-container">
+            <div class="logo">RM<span class="logo-dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Ana Sayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yetenekler</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#education">Eğitim</a></li>
+                <li><a href="#contact">İletişim</a></li>
             </ul>
+            <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="menu-btn" id="menuBtn" aria-label="Menü aç">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
+        <!-- Mobil Menü -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#hero" class="mobile-link">Ana Sayfa</a>
+            <a href="#about" class="mobile-link">Hakkımda</a>
+            <a href="#skills" class="mobile-link">Yetenekler</a>
+            <a href="#projects" class="mobile-link">Projeler</a>
+            <a href="#education" class="mobile-link">Eğitim</a>
+            <a href="#contact" class="mobile-link">İletişim</a>
+        </div>
     </header>
 
+    <!-- ======================== HERO ======================== -->
     <section id="hero">
-        <p class="p1">Merhaba, Ben</p>
-        <h1 class="h1">Resul Mut</h1>
-        <h2 class="h2">Web Developer</h2>
-        <p class="p2">Erzincan Binali Yıldırım Üniversitesi'nde eğitim gören, Python, Web ve IoT teknolojileriyle
-            yenilikçi çözümler üreten tutkulu bir geliştiriciyim.</p>
-        <div class="hero-button">
-            <button type="submit" class="btn-projects"><a href="#projects" class="btn-project-text">Projelerimi
-                    İncele</a></button>
-            <button class="btn-cv"><a href="RESULMUT-cv.pdf" download class="btn-cv-text">CV İndir<i
-                        class="fa-solid fa-download"></i></a></button>
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
         </div>
-        <div class="social-icons">
-            <a href="https://x.com/mt_resul" class="icon-css" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://github.com/ResulMut" class="icon-css" target="_blank"><i
-                    class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/resul-mut-031a4b386/" class="icon-css" target="_blank"><i
-                    class="fa-brands fa-linkedin"></i></a>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="800">
+                <p class="hero-greeting">👋 Merhaba, Ben</p>
+                <h1 class="hero-name">Resul Mut</h1>
+                <div class="hero-role">
+                    <span class="role-prefix">Ben bir&nbsp;</span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-desc">
+                    Erzincan Binali Yıldırım Üniversitesi'nde Bilgisayar Programcılığı okuyan,
+                    Python, Web ve IoT teknolojileriyle yenilikçi çözümler üreten tutkulu bir geliştiriciyim.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i> Projelerimi İncele
+                    </a>
+                    <a href="RESULMUT-cv.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i> CV İndir
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/ResulMut" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/resul-mut-031a4b386/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/mt_resul" target="_blank" class="social-link" aria-label="Twitter/X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="900">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <img src="img/me.png" alt="Resul Mut profil fotoğrafı" class="profile-img">
+                    <div class="image-ring"></div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fab fa-python"></i> Python
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fas fa-microchip"></i> IoT
+                </div>
+                <div class="floating-badge badge-3">
+                    <i class="fab fa-react"></i> React
+                </div>
+            </div>
         </div>
+        <a href="#about" class="scroll-down" aria-label="Aşağı kaydır">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
+    <!-- ======================== ABOUT ======================== -->
     <section id="about">
-        <h2>Hakkımda</h2>
-        <div class="about-grid">
-            <div class="aboutme">
-                <h3>Yazılım ve Donanım Kesişimi</h3>
-                <p>Bilgisayar Programcılığı öğrencisi olarak kodun gücünü, IoT ve donanım ile birleştirmeyi seviyorum.
-                    Python ile veri işleme, C# ile uygulama geliştirme ve modern web teknolojileri (HTML, CSS, JS) ile
-                    kullanıcı deneyimleri sunma konularında kendimi sürekli eğitiyorum.</p>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Hakkımda</span>
+                <h2 class="section-title">Kim Olduğumu <span class="gradient-text">Tanıyalım</span></h2>
             </div>
-
-            <div class="skills">
-                <h3>Teknik Kapasite</h3>
-                <div class="skills-container">
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
+            <div class="about-grid">
+                <div class="about-image-col" data-aos="fade-right" data-aos-delay="100">
+                    <div class="about-img-wrapper">
+                        <img src="img/me.png" alt="Resul Mut" class="about-img">
+                        <div class="about-img-deco"></div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML & CSS</span>
+                </div>
+                <div class="about-text-col" data-aos="fade-left" data-aos-delay="200">
+                    <h3>Yazılım ve Donanımın Kesişiminde</h3>
+                    <p>
+                        Bilgisayar Programcılığı öğrencisi olarak kodun gücünü IoT ve donanım ile birleştirmeyi seviyorum.
+                        Python ile veri işleme, C# ile uygulama geliştirme ve modern web teknolojileri ile
+                        kullanıcı deneyimleri sunma konularında kendimi sürekli geliştiriyorum.
+                    </p>
+                    <p>
+                        Yazılımı sadece bir araç değil, problem çözmenin en etkili yolu olarak görüyorum.
+                        Her projede hem teknik mükemmeliyeti hem de kullanıcı deneyimini ön planda tutuyorum.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Proje</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Teknoloji</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Yıl Deneyim</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C++</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C#</span>
-                    </div>
-                    <div class="skill-item" id="js-kutu">
-                        <span class="skill-name">javaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">React.js</span>
+                    <div class="about-actions">
+                        <a href="RESULMUT-cv.pdf" download class="btn btn-primary">
+                            <i class="fas fa-file-pdf"></i> CV İndir
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> İletişime Geç
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ======================== SKILLS ======================== -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Yetenekler</span>
+                <h2 class="section-title">Teknik <span class="gradient-text">Kapasitem</span></h2>
+            </div>
+            <div class="skills-grid">
+
+                <!-- Programlama -->
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-code"></i> Programlama Dilleri</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="devicon-python-plain colored"></i> Python</span>
+                        <span class="skill-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="devicon-csharp-plain colored"></i> C#</span>
+                        <span class="skill-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+                    </div>
+                </div>
+
+                <!-- Web -->
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-globe"></i> Web Teknolojileri</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                        <span class="skill-tag"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                        <span class="skill-tag"><i class="devicon-react-original colored"></i> React.js</span>
+                    </div>
+                </div>
+
+                <!-- Araçlar -->
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-wrench"></i> Araçlar & Diğer</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-wifi"></i> IoT / ESP32</span>
+                        <span class="skill-tag"><i class="devicon-git-plain colored"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> SQLite</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Streamlit</span>
+                        <span class="skill-tag"><i class="fas fa-leaf"></i> Arduino</span>
+                        <span class="skill-tag"><i class="fas fa-network-wired"></i> REST API</span>
+                        <span class="skill-tag"><i class="fas fa-terminal"></i> CLI</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROJECTS ======================== -->
     <section id="projects">
-        <h2 class="project-head">öne çıkan projeler</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <!-- <img src="img/1vıdeoDvn.png" alt="YT Downloader"> -->
-                <h3 class="project-h3">YT Video Downloader</h3>
-                <p>Streamlit ile geliştirilmiş, çoklu indirme optimizasyonlu araç.</p>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Projeler</span>
+                <h2 class="section-title">Öne Çıkan <span class="gradient-text">Projelerim</span></h2>
             </div>
-            <div class="project-card">
-                <!-- <img src="img/1IoT.jpeg" alt="Smart Sera"> -->
-                <h3 class="project-h3">Akıllı Sera Sistemi</h3>
-                <p>ESP32 ve web kontrol paneli ile otomatik bitki bakımı.</p>
-            </div>
-            <div class="project-card">
-                <!-- <img src="img/1website.png" alt="Web Developer"> -->
-                <h3 class="project-h3">Profesyonel Portfolyo</h3>
-                <p>Karanlık mod, animasyonlar ve modern tasarım ile kodladığım site.</p>
+            <div class="projects-grid">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img-wrapper">
+                        <img src="img/vıdeoDvn.png" alt="YT Video Downloader" class="project-img" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/ResulMut" target="_blank" class="project-link-btn" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">yt-dlp</span>
+                        </div>
+                        <h3>YT Video Downloader</h3>
+                        <p>Streamlit ile geliştirilmiş, çoklu format ve kalite desteğine sahip kullanıcı dostu YouTube video indirme aracı.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/ResulMut" target="_blank" class="btn-sm btn-ghost">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img-wrapper">
+                        <img src="img/IoT.jpeg" alt="Akıllı Sera Sistemi" class="project-img" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/ResulMut" target="_blank" class="project-link-btn" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">ESP32</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">Web</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <h3>Akıllı Sera Sistemi</h3>
+                        <p>ESP32 tabanlı IoT cihaz ve web kontrol paneli ile donanımlı, otomatik sulama ve iklim kontrolü yapan akıllı bitki bakım sistemi.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/ResulMut" target="_blank" class="btn-sm btn-ghost">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-img-wrapper">
+                        <img src="img/website.png" alt="Profesyonel Portfolyo" class="project-img" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/ResulMut" target="_blank" class="project-link-btn" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <h3>Profesyonel Portfolyo</h3>
+                        <p>Glassmorphism tasarım, scroll animasyonları, typewriter efekti ve koyu/açık tema ile kodladığım kişisel portfolyo sitesi.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/ResulMut" target="_blank" class="btn-sm btn-ghost">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ======================== EDUCATION ======================== -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Eğitim & Deneyim</span>
+                <h2 class="section-title">Yolculuğum</h2>
+            </div>
+            <div class="timeline">
 
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2023 — Devam</span>
+                            <span class="timeline-badge active">Devam Ediyor</span>
+                        </div>
+                        <h3>Bilgisayar Programcılığı</h3>
+                        <p class="timeline-org"><i class="fas fa-university"></i> Erzincan Binali Yıldırım Üniversitesi</p>
+                        <p>Python programlama, veri yapıları, nesne yönelimli programlama, web geliştirme ve IoT sistemleri üzerine eğitim almaktayım.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2024</span>
+                            <span class="timeline-badge">Proje</span>
+                        </div>
+                        <h3>Akıllı Sera Sistemi</h3>
+                        <p class="timeline-org"><i class="fas fa-microchip"></i> IoT & Gömülü Sistemler</p>
+                        <p>ESP32 mikrodenetleyici ve sensörlerle otonom sulama sistemi geliştirdim. Web tabanlı kontrol paneli ile uzaktan yönetim imkânı sağladım.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2023</span>
+                            <span class="timeline-badge">Proje</span>
+                        </div>
+                        <h3>YT Video Downloader</h3>
+                        <p class="timeline-org"><i class="fab fa-python"></i> Python & Streamlit</p>
+                        <p>Streamlit framework kullanarak kullanıcı dostu bir YouTube video indirme uygulaması geliştirdim. Çoklu format ve çözünürlük desteği eklendi.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <span class="timeline-badge">Proje</span>
+                        </div>
+                        <h3>Profesyonel Portfolyo Sitesi</h3>
+                        <p class="timeline-org"><i class="fas fa-globe"></i> HTML, CSS & JavaScript</p>
+                        <p>Glassmorphism tasarım dili, AOS animasyonları, typewriter efekti ve tam responsive yapı ile modern portfolyo sitesi geliştirdim.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CONTACT ======================== -->
     <section id="contact">
-        <h2>Bana Ulaşın</h2>
-        <div class="contact-container">
-            <div class="location">
-                <div class="contact-info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>resulmut49@gmail.com</p>
-                </div>
-                <div class="contact-info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>0507 052 3180</p>
-                </div>
-                <div class="contact-info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p>İstanbul, Türkiye</p>
-                </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">İletişim</span>
+                <h2 class="section-title">Bana <span class="gradient-text">Ulaşın</span></h2>
+                <p class="section-desc">Bir fikriniz mi var? Birlikte çalışalım! 🚀</p>
             </div>
-            <form id="iletisimFormu" action="https://formspree.io/f/mgoppozv" method="POST">
-                <input type="text" name="ad" placeholder="Ad Soyad" required>
-                <input type="email" name="email" placeholder="E-posta" required>
-                <textarea name="mesaj" placeholder="mesajınız" required></textarea>
-                <button type="submit">Mesaj Gönder</button>
-            </form>
-            <p id="formDurumu"></p>
+            <div class="contact-grid">
+
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p class="contact-label">E-posta</p>
+                            <p class="contact-value">resulmut49@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <p class="contact-label">Telefon</p>
+                            <p class="contact-value">0507 052 3180</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <p class="contact-label">Konum</p>
+                            <p class="contact-value">İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/ResulMut" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/resul-mut-031a4b386/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/mt_resul" target="_blank" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="iletisimFormu" action="https://formspree.io/f/mgoppozv" method="POST" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group">
+                        <input type="text" name="ad" id="adInput" placeholder=" " required>
+                        <label for="adInput">Ad Soyad</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="emailInput" placeholder=" " required>
+                        <label for="emailInput">E-posta Adresiniz</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="mesaj" id="mesajInput" placeholder=" " required></textarea>
+                        <label for="mesajInput">Mesajınız</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Mesaj Gönder
+                    </button>
+                    <p id="formDurumu"></p>
+                </form>
+
+            </div>
         </div>
     </section>
 
+    <!-- ======================== FOOTER ======================== -->
     <footer>
-        <p>&copy; Resul Mut - Tüm Hakları Saklıdır</p>
-        <div class="footer-ico">
-            <a href="https://github.com/ResulMut" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/resul-mut-031a4b386/" target="_blank"><i
-                    class="fa-brands fa-linkedin"></i></a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">RM<span class="logo-dot">.</span></span>
+                <p>Yazılımla dünyayı daha iyi bir yer yapıyorum.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Ana Sayfa</a>
+                <a href="#about">Hakkımda</a>
+                <a href="#projects">Projeler</a>
+                <a href="#contact">İletişim</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/ResulMut" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/resul-mut-031a4b386/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/mt_resul" target="_blank" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Resul Mut — Tüm Hakları Saklıdır. Sevgiyle kodlandı ❤️</p>
         </div>
     </footer>
 
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
-</body>
 
+</body>
 </html>
