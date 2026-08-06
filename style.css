@@ -531,12 +531,12 @@ body.light .form-group textarea:not(:placeholder-shown) + label{
 footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 24px}
 .footer-inner{
     max-width:1100px;margin:0 auto;padding:0 24px;
-    display:grid;grid-template-columns:1fr auto auto;
-    gap:40px;align-items:center;margin-bottom:36px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    gap:40px;margin-bottom:36px;
 }
 .footer-brand .logo{font-size:24px;margin-bottom:6px;display:block}
 .footer-brand p{font-size:14px;color:var(--tx-2)}
-.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links{display:flex;flex-direction:row;gap:24px;flex-wrap:wrap;align-items:center}
 .footer-links a{color:var(--tx-2);font-size:14px;font-weight:500;transition:var(--ease)}
 .footer-links a:hover{color:var(--violet)}
 .footer-social{display:flex;gap:10px}
